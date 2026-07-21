@@ -27,7 +27,7 @@ html,body{margin:0;height:100%;background:#cfe0ea;font-family:-apple-system,Blin
 <button data-s="0">manh&atilde;</button><button data-s="1" class="on">meio-dia</button><button data-s="2">tarde</button>
 <button id="rf">sem teto</button><button id="lb">legendas</button><button id="mb">medidas</button></div>
 <div class="panel" id="meas">
-<p style="margin:0 0 8px;font-size:9.5px;color:#5a7285;font-style:italic">Medidas do briefing. Nesta vers&atilde;o: studio reduzido no lado leste e sala ampliada ao norte, integrada ao hall &mdash; esses dois valores mudaram.</p>
+<p style="margin:0 0 8px;font-size:9.5px;color:#5a7285;font-style:italic">Medidas do briefing. Nesta vers&atilde;o: sala ampliada ao norte (integrada ao hall) e sala de m&uacute;sica reduzida no canto noroeste &mdash; alguns valores mudaram.</p>
 <h4>Terreno &middot; 450 m&sup2;</h4>
 <table>
 <tr><td>lote 15,00 &times; 30,00</td><td>450 m&sup2;</td></tr>
@@ -36,7 +36,7 @@ html,body{margin:0;height:100%;background:#cfe0ea;font-family:-apple-system,Blin
 <h4>Casa &middot; 95,6 m&sup2;</h4>
 <table>
 <tr><td>sala + cozinha &middot; 4,10&times;3,40 + 5,80&times;2,40</td><td>27,8 m&sup2;</td></tr>
-<tr><td>escrit&oacute;rio / quarto (norte) &middot; 5,80&times;3,60</td><td>20,9 m&sup2;</td></tr>
+<tr><td>sala de m&uacute;sica (canto NO) &middot; 3,40&times;3,60</td><td>12,2 m&sup2;</td></tr>
 <tr><td>su&iacute;te 1 &middot; 3,40&times;5,20</td><td>17,7 m&sup2;</td></tr>
 <tr><td>banho su&iacute;te 1 + closet &middot; 3,40&times;3,20</td><td>10,9 m&sup2;</td></tr>
 <tr><td>hall &middot; 1,20&times;8,40</td><td>10,1 m&sup2;</td></tr>
@@ -149,18 +149,18 @@ function partX(x,z1,z2){box(.12,H,z2-z1,x,0,(z1+z2)/2,M.white2);}
 function partZ(z,x1,x2){box(x2-x1,H,.12,(x1+x2)/2,0,z,M.white2);}
 /* perimetro: bloco sul + ala meio + ala norte (escritorio a oeste) */
 wallZ(4.0,1.5,10.0);wallX(10.0,4.0,16.0);
-wallX(7.3,12.4,16.0);wallZ(16.0,1.5,10.0);wallX(1.5,4.0,16.0);
-/* particoes internas */
-partX(4.9,4.0,12.4);partX(6.1,4.0,6.0);
+wallZ(16.0,1.5,10.0);wallX(1.5,4.0,16.0);
+/* particoes internas — sala de musica no canto NO, sala aberta ao resto */
+partX(4.9,4.0,12.4);partX(4.9,12.4,13.6);partX(4.9,14.8,16.0);partX(6.1,4.0,6.0);
 partZ(7.2,1.5,4.9);partZ(6.0,6.1,10.0);partX(8.15,4.0,6.0);
-partZ(12.4,1.5,4.9);partZ(12.4,6.1,7.3);
+partZ(12.4,1.5,4.9);
 /* pisos */
 slab(9.0,5.9,5.75,6.7,M.stone,.22);slab(9.0,3.0,5.75,10.9,M.stone,.22);slab(9.0,4.1,5.75,14.2,M.stone,.22);
 /* janelas + portas */
 vaoX(3.2,2.3,7.7,.4,10.0,1);
 vaoX(2.0,2.3,10.7,.4,10.0,1);
-vaoX(2.8,1.6,14.2,1.0,7.3,1);
-vaoZ(3.0,1.5,4.4,1.1,16.0,1);
+vaoZ(2.4,1.5,3.2,1.1,16.0,1);
+vaoZ(3.0,1.5,7.3,1.1,16.0,1);
 vaoX(2.6,1.4,9.8,1.0,1.5,-1);
 box(1.0,.7,.14,7.0,1.9,3.96,M.blue);
 box(1.2,2.3,.16,5.5,0,3.92,M.blueD);
@@ -195,7 +195,7 @@ box(9.8,.14,.14,5.5,H-.05,16.85,M.fascia);
 clara(1.10,3.60,5.50,7.50,H);
 clara(2.00,2.40,8.20,8.00,H);
 clara(2.20,1.60,9.00,10.80,H);
-clara(2.00,1.80,4.40,14.20,H);
+clara(2.00,1.80,3.20,14.20,H);
 clara(0.80,1.20,3.20,5.60,H);
 box(5.25,.26,6.2,12.475,H+.04,6.7,M.roof);
 box(5.3,.14,.14,12.475,H,9.85,M.fascia);
@@ -204,7 +204,7 @@ box(2.20,.20,3.00,5.60,3.55,26.0,M.blue,0,.155);
 box(1.80,.06,2.60,5.60,3.80,26.0,M.glass,0,.155);
 addTo=scene;
 /* ---------- legendas ---------- */
-label('sala + cozinha',7.7,11.0);label('escritório / quarto',4.4,14.2);
+label('sala + cozinha',7.3,10.5);label('sala de música',3.2,14.2,4.6,4.6);
 label('suíte 1',3.2,9.8);label('banho + closet',3.2,5.6,4.6,4.0);
 label('hall',5.5,5.0,4.6,2.2);label('lavabo',7.1,5.0,4.6,2.4);
 label('vestíbulo',9.2,5.0,4.6,3.0);label('garagem 2 carros',12.475,7.0,4.6,4.4);
