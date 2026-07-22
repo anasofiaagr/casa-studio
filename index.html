@@ -21,22 +21,22 @@ html,body{margin:0;height:100%;background:#cfe0ea;font-family:-apple-system,Blin
 #meas .tot{margin-top:8px;padding-top:6px;border-top:1px solid #b9cbd8;color:#22384a}
 </style></head><body>
 <canvas id="c"></canvas>
-<div class="panel" id="title"><b>Casa &middot; branco &amp; azul</b><br><span>casa 117,3 + garagem 24,6 + studio 22,8<br>= 164,7 m&sup2; &middot; terreno 450 m&sup2;</span></div>
+<div class="panel" id="title"><b>Casa &middot; branco &amp; azul</b><br><span>casa 105,1 + garagem 24,6 + studio 22,8<br>= 152,5 m&sup2; &middot; terreno 450 m&sup2;</span></div>
 <div class="panel" id="hint">arraste &middot; pin&ccedil;a<br>N ao fundo &middot; L &agrave; direita</div>
 <div class="panel" id="bar">
 <button data-s="0">manh&atilde;</button><button data-s="1" class="on">meio-dia</button><button data-s="2">tarde</button>
 <button id="rf">sem teto</button><button id="lb">legendas</button><button id="mb">medidas</button></div>
 <div class="panel" id="meas">
-<p style="margin:0 0 8px;font-size:9.5px;color:#5a7285;font-style:italic">Revis&atilde;o: sala grande e aberta (canto NO + extens&atilde;o norte), sala de m&uacute;sica nova ao norte, estreitada a leste (jardim leste maior), lavabo &uacute;nico. *Studio ainda reduzido.</p>
+<p style="margin:0 0 8px;font-size:9.5px;color:#5a7285;font-style:italic">Revis&atilde;o: sala de m&uacute;sica no canto NE (vista norte+leste); canto NO recuado (vira jardim); sala aberta; jardim leste maior; lavabo &uacute;nico. *Studio ainda reduzido.</p>
 <h4>Terreno &middot; 450 m&sup2;</h4>
 <table>
 <tr><td>lote 15,00 &times; 30,00</td><td>450 m&sup2;</td></tr>
 <tr><td>recuos: frontal 4,00 &middot; laterais 1,50 &middot; fundos 3,00</td><td></td></tr>
 </table>
-<h4>Casa &middot; 117,3 m&sup2;</h4>
+<h4>Casa &middot; 105,1 m&sup2;</h4>
 <table>
-<tr><td>sala + cozinha (aberta) &middot; canto NO + ext. N</td><td>66,3 m&sup2;</td></tr>
-<tr><td>sala de m&uacute;sica (norte) &middot; 3,40&times;3,60</td><td>12,2 m&sup2;</td></tr>
+<tr><td>sala + cozinha (aberta) &middot; com canto NO</td><td>53,3 m&sup2;</td></tr>
+<tr><td>sala de m&uacute;sica (canto NE) &middot; 3,60&times;3,60</td><td>13,0 m&sup2;</td></tr>
 <tr><td>su&iacute;te 1 &middot; 3,40&times;5,20</td><td>17,7 m&sup2;</td></tr>
 <tr><td>banho su&iacute;te 1 + closet &middot; 3,40&times;3,20</td><td>10,9 m&sup2;</td></tr>
 <tr><td>lavabo (+ vest&iacute;bulo) &middot; 3,90&times;2,00</td><td>7,8 m&sup2;</td></tr>
@@ -48,15 +48,15 @@ html,body{margin:0;height:100%;background:#cfe0ea;font-family:-apple-system,Blin
 <table>
 <tr><td>escrit&oacute;rio + banho + kitchenette/dormir</td><td>22,8 m&sup2;</td></tr>
 </table>
-<h4>Claraboias &middot; 27,3 m&sup2;</h4>
+<h4>Claraboias &middot; 23,3 m&sup2;</h4>
 <table>
-<tr><td>sala (4 vidros)</td><td>18,4 m&sup2;</td></tr>
+<tr><td>sala (3 vidros)</td><td>14,4 m&sup2;</td></tr>
 <tr><td>sala de m&uacute;sica &middot; 1,80&times;1,80</td><td>3,2 m&sup2;</td></tr>
 <tr><td>banho + closet &middot; 0,80&times;1,20</td><td>1,0 m&sup2;</td></tr>
 <tr><td>studio (plano inclinado) &middot; 1,80&times;2,60</td><td>4,7 m&sup2;</td></tr>
 </table>
-<div class="tot">constru&iacute;dos <b>164,7 m&sup2;</b> &middot; livres <b>285,3 m&sup2;</b><br>
-taxa de ocupa&ccedil;&atilde;o 36,6% &middot; *studio reduzido (restaur&aacute;vel p/ 25,6 m&sup2;)</div>
+<div class="tot">constru&iacute;dos <b>152,5 m&sup2;</b> &middot; livres <b>297,5 m&sup2;</b><br>
+taxa de ocupa&ccedil;&atilde;o 33,9% &middot; *studio reduzido (restaur&aacute;vel p/ 25,6 m&sup2;)</div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
@@ -142,21 +142,21 @@ function wallX(x,z1,z2,h){box(.18,h||H,z2-z1,x,0,(z1+z2)/2,M.white);}
 function wallZ(z,x1,x2,h){box(x2-x1,h||H,.18,(x1+x2)/2,0,z,M.white);}
 function partX(x,z1,z2){box(.12,H,z2-z1,x,0,(z1+z2)/2,M.white2);}
 function partZ(z,x1,x2){box(x2-x1,H,.12,(x1+x2)/2,0,z,M.white2);}
-/* perimetro: sala grande (canto NO integrado) + extensao norte z19.6; sala estreitada a leste (x8.5) ao norte da garagem */
+/* perimetro: sala aberta; sala de musica no canto NE (vista NE); coluna oeste ate z16 */
 wallZ(4.0,1.5,10.0);wallX(10.0,4.0,9.4);wallZ(9.4,8.5,10.0);wallX(8.5,9.4,19.6);
-wallZ(19.6,1.5,8.5);wallX(1.5,4.0,19.6);
+wallZ(19.6,4.9,8.5);wallZ(16.0,1.5,4.9);wallX(4.9,16.0,19.6);wallX(1.5,4.0,16.0);
 /* particoes internas */
 partX(4.9,4.0,12.4);partX(6.1,4.0,6.0);
 partZ(7.2,1.5,4.9);partZ(6.0,6.1,10.0);
 partZ(12.4,1.5,4.9);
-/* sala de musica nova (norte, canto NO) — porta a leste p/ sala */
-partZ(16.0,1.5,4.9);partX(4.9,16.0,17.0);partX(4.9,18.2,19.6);
+/* sala de musica no canto NE — parede sul c/ porta p/ sala */
+partZ(16.0,4.9,5.9);partZ(16.0,7.1,8.5);
 /* pisos */
-slab(9.0,5.6,5.75,6.7,M.stone,.22);slab(7.5,10.5,5.0,14.5,M.stone,.22);
+slab(9.0,5.6,5.75,6.7,M.stone,.22);slab(7.5,7.0,5.0,12.7,M.stone,.22);slab(4.0,4.0,6.5,17.6,M.stone,.22);
 /* janelas + portas */
 vaoX(3.0,2.3,12.0,.4,8.5,1);
-vaoX(3.0,2.3,16.5,.4,8.5,1);
-vaoZ(2.4,1.5,3.2,1.1,19.6,1);
+vaoX(2.0,1.5,17.8,.9,8.5,1);
+vaoZ(2.4,1.5,3.2,1.1,16.0,1);
 vaoZ(2.4,1.5,6.7,1.1,19.6,1);
 vaoX(2.6,1.4,9.8,1.0,1.5,-1);
 box(1.0,.7,.14,7.0,1.9,3.96,M.blue);
@@ -186,13 +186,14 @@ box(1.0,2.2,.16,5.2,0,23.92,M.blueD);
 /* ---------- tetos (grupo desligavel) ---------- */
 addTo=roofG;
 box(9.8,.26,6.4,5.5,H,6.7,M.roof);
-box(8.4,.26,10.8,4.8,H,14.5,M.roof);
-box(8.4,.14,.14,4.8,H-.05,20.05,M.fascia);
+box(8.4,.26,7.0,4.8,H,12.9,M.roof);
+box(4.2,.26,4.2,6.5,H,17.6,M.roof);
+box(4.2,.14,.14,6.5,H-.05,19.75,M.fascia);
+box(3.6,.14,.14,3.2,H-.05,16.15,M.fascia);
 clara(2.00,2.40,7.00,8.00,H);
 clara(2.00,2.40,6.80,13.00,H);
-clara(2.00,2.00,6.50,17.50,H);
+clara(1.80,1.80,6.50,17.60,H);
 clara(2.00,2.40,3.20,14.00,H);
-clara(1.80,1.80,3.20,17.80,H);
 clara(0.80,1.20,3.20,5.60,H);
 box(5.25,.26,6.2,12.475,H+.04,6.7,M.roof);
 box(5.3,.14,.14,12.475,H,9.85,M.fascia);
@@ -201,7 +202,7 @@ box(2.20,.20,3.00,5.60,3.55,26.0,M.blue,0,.155);
 box(1.80,.06,2.60,5.60,3.80,26.0,M.glass,0,.155);
 addTo=scene;
 /* ---------- legendas ---------- */
-label('sala + cozinha',6.5,10.0);label('sala de música',3.2,17.8,4.6,4.6);
+label('sala + cozinha',6.0,10.5);label('sala de música',6.5,17.8,4.6,4.6);
 label('suíte 1',3.2,9.8);label('banho + closet',3.2,5.6,4.6,4.0);
 label('hall',5.5,5.0,4.6,2.2);label('lavabo',8.0,5.0,4.6,2.4);
 label('garagem 2 carros',12.475,7.0,4.6,4.4);label('jardim leste',12.2,13.5,3.2,3.4);
