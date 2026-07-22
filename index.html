@@ -27,7 +27,7 @@ html,body{margin:0;height:100%;background:#cfe0ea;font-family:-apple-system,Blin
 <button data-s="0">manh&atilde;</button><button data-s="1" class="on">meio-dia</button><button data-s="2">tarde</button>
 <button id="rf">sem teto</button><button id="lb">legendas</button><button id="mb">medidas</button></div>
 <div class="panel" id="meas">
-<p style="margin:0 0 8px;font-size:9.5px;color:#5a7285;font-style:italic">Revis&atilde;o: sala de m&uacute;sica no canto NE (vista N+L); canto NO recuado (jardim); jardim leste maior; lavabo &uacute;nico. Studio ampliado a leste; portas de vidro viradas p/ o jardim (sul, frente da casa).</p>
+<p style="margin:0 0 8px;font-size:9.5px;color:#5a7285;font-style:italic">Revis&atilde;o: alcova NE aberta p/ sala (ex-sala de m&uacute;sica, uso a definir); canto NO recuado (jardim); jardim leste maior; hall ampliado. Studio ampliado a leste, portas de vidro p/ o jardim (sul); porta interna escrit&oacute;rio&harr;quarto.</p>
 <h4>Terreno &middot; 450 m&sup2;</h4>
 <table>
 <tr><td>lote 15,00 &times; 30,00</td><td>450 m&sup2;</td></tr>
@@ -35,8 +35,7 @@ html,body{margin:0;height:100%;background:#cfe0ea;font-family:-apple-system,Blin
 </table>
 <h4>Casa &middot; 105,1 m&sup2;</h4>
 <table>
-<tr><td>sala + cozinha (aberta) &middot; com canto NO</td><td>53,3 m&sup2;</td></tr>
-<tr><td>sala de m&uacute;sica (canto NE) &middot; 3,60&times;3,60</td><td>13,0 m&sup2;</td></tr>
+<tr><td>sala + cozinha (aberta) &middot; canto NO + alcova NE</td><td>66,3 m&sup2;</td></tr>
 <tr><td>su&iacute;te 1 &middot; 3,40&times;5,20</td><td>17,7 m&sup2;</td></tr>
 <tr><td>banho su&iacute;te 1 + closet &middot; 3,40&times;3,20</td><td>10,9 m&sup2;</td></tr>
 <tr><td>lavabo &middot; 2,50&times;2,00</td><td>5,0 m&sup2;</td></tr>
@@ -51,8 +50,7 @@ html,body{margin:0;height:100%;background:#cfe0ea;font-family:-apple-system,Blin
 </table>
 <h4>Claraboias &middot; 23,3 m&sup2;</h4>
 <table>
-<tr><td>sala (3 vidros)</td><td>14,4 m&sup2;</td></tr>
-<tr><td>sala de m&uacute;sica &middot; 1,80&times;1,80</td><td>3,2 m&sup2;</td></tr>
+<tr><td>sala (4 vidros)</td><td>17,6 m&sup2;</td></tr>
 <tr><td>banho + closet &middot; 0,80&times;1,20</td><td>1,0 m&sup2;</td></tr>
 <tr><td>studio (plano inclinado) &middot; 1,80&times;2,60</td><td>4,7 m&sup2;</td></tr>
 </table>
@@ -150,8 +148,7 @@ wallZ(19.6,4.9,8.5);wallZ(16.0,1.5,4.9);wallX(4.9,16.0,19.6);wallX(1.5,4.0,16.0)
 partX(4.9,4.0,12.4);partX(7.5,4.0,6.0);
 partZ(7.2,1.5,4.9);partZ(6.0,7.5,10.0);
 partZ(12.4,1.5,4.9);
-/* sala de musica no canto NE — parede sul c/ porta p/ sala */
-partZ(16.0,4.9,5.9);partZ(16.0,7.1,8.5);
+/* alcova NE aberta p/ sala (sem parede) — ex sala de musica */
 /* pisos */
 slab(9.0,5.6,5.75,6.7,M.stone,.22);slab(7.5,7.0,5.0,12.7,M.stone,.22);slab(4.0,4.0,6.5,17.6,M.stone,.22);
 /* janelas + portas */
@@ -172,7 +169,7 @@ box(.16,1.9,.7,10.0,0,7.5,M.blueD);
 box(2.6,3.5,.2,5.6,0,24.0,M.white);box(4.1,2.8,.2,8.95,0,24.0,M.white);
 box(2.6,3.5,.2,5.6,0,28.0,M.white);box(4.1,2.8,.2,8.95,0,28.0,M.white);
 box(.2,3.6,4.0,4.3,0,26.0,M.white);box(.2,2.6,4.0,11.0,0,26.0,M.white);
-box(.2,3.14,4.0,6.9,0,26.0,M.white2);
+box(.2,3.14,1.4,6.9,0,24.7,M.white2);box(.2,3.14,1.4,6.9,0,27.3,M.white2);box(.2,1.04,1.2,6.9,2.1,26.0,M.white2);
 slab(7.0,4.6,7.5,26.0,M.stone,.20);
 box(.26,.60,3.40,4.30,2.85,26.0,M.blue);
 box(.05,.40,3.10,4.16,2.95,26.0,M.glass);
