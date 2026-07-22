@@ -39,8 +39,8 @@ html,body{margin:0;height:100%;background:#cfe0ea;font-family:-apple-system,Blin
 <tr><td>sala de m&uacute;sica (canto NE) &middot; 3,60&times;3,60</td><td>13,0 m&sup2;</td></tr>
 <tr><td>su&iacute;te 1 &middot; 3,40&times;5,20</td><td>17,7 m&sup2;</td></tr>
 <tr><td>banho su&iacute;te 1 + closet &middot; 3,40&times;3,20</td><td>10,9 m&sup2;</td></tr>
-<tr><td>lavabo (+ vest&iacute;bulo) &middot; 3,90&times;2,00</td><td>7,8 m&sup2;</td></tr>
-<tr><td>hall &middot; 1,20&times;2,00</td><td>2,4 m&sup2;</td></tr>
+<tr><td>lavabo &middot; 2,50&times;2,00</td><td>5,0 m&sup2;</td></tr>
+<tr><td>hall (ampliado) &middot; 2,60&times;2,00</td><td>5,2 m&sup2;</td></tr>
 </table>
 <h4>Garagem (2 carros)</h4>
 <table><tr><td>4,55 &times; 5,40</td><td>24,6 m&sup2;</td></tr></table>
@@ -147,21 +147,22 @@ function partZ(z,x1,x2){box(x2-x1,H,.12,(x1+x2)/2,0,z,M.white2);}
 wallZ(4.0,1.5,10.0);wallX(10.0,4.0,9.4);wallZ(9.4,8.5,10.0);wallX(8.5,9.4,19.6);
 wallZ(19.6,4.9,8.5);wallZ(16.0,1.5,4.9);wallX(4.9,16.0,19.6);wallX(1.5,4.0,16.0);
 /* particoes internas */
-partX(4.9,4.0,12.4);partX(6.1,4.0,6.0);
-partZ(7.2,1.5,4.9);partZ(6.0,6.1,10.0);
+partX(4.9,4.0,12.4);partX(7.5,4.0,6.0);
+partZ(7.2,1.5,4.9);partZ(6.0,7.5,10.0);
 partZ(12.4,1.5,4.9);
 /* sala de musica no canto NE — parede sul c/ porta p/ sala */
 partZ(16.0,4.9,5.9);partZ(16.0,7.1,8.5);
 /* pisos */
 slab(9.0,5.6,5.75,6.7,M.stone,.22);slab(7.5,7.0,5.0,12.7,M.stone,.22);slab(4.0,4.0,6.5,17.6,M.stone,.22);
 /* janelas + portas */
-vaoX(3.0,2.3,12.0,.4,8.5,1);
+vaoX(5.0,2.3,13.0,.05,8.5,1);
 vaoX(2.0,1.5,17.8,.9,8.5,1);
 vaoZ(2.4,1.5,3.2,1.1,16.0,1);
 vaoZ(2.4,1.5,6.7,1.1,19.6,1);
 vaoX(2.6,1.4,9.8,1.0,1.5,-1);
-box(1.0,.7,.14,7.0,1.9,3.96,M.blue);
-box(1.2,2.3,.16,5.5,0,3.92,M.blueD);
+vaoX(2.4,1.4,14.0,1.0,1.5,-1);
+box(1.0,.7,.14,8.7,1.9,3.96,M.blue);
+box(1.2,2.3,.16,6.3,0,3.92,M.blueD);
 /* ---------- garagem 2 carros ---------- */
 wallX(14.75,4.0,9.4);wallZ(9.4,10.2,14.75);wallZ(4.0,10.2,14.75);
 slab(4.9,5.8,12.475,6.7,M.stone,.22);
@@ -205,12 +206,12 @@ addTo=scene;
 /* ---------- legendas ---------- */
 label('sala + cozinha',6.0,10.5);label('sala de música',6.5,17.8,4.6,4.6);
 label('suíte 1',3.2,9.8);label('banho + closet',3.2,5.6,4.6,4.0);
-label('hall',5.5,5.0,4.6,2.2);label('lavabo',8.0,5.0,4.6,2.4);
+label('hall',6.0,5.0,4.6,2.2);label('lavabo',8.7,5.0,4.6,2.4);
 label('garagem 2 carros',12.475,7.0,4.6,4.4);label('jardim leste',12.2,13.5,3.2,3.4);
 label('studio',7.5,22.4,4.2,2.6);label('escritório',5.6,26.0,4.4,3.0);
 label('banho',7.6,26.0,4.4,2.4);label('kitchenette + dormir',9.8,26.0,4.4,5.0);
 label('área verde e jardim',8.5,20.0,3.4,5.0);
-label('entrada principal',5.5,2.0,2.4,4.4);
+label('entrada principal',6.3,2.0,2.4,4.4);
 label('entrada privada p/ studio',.75,17.5,2.4,6.0);
 label('N',7.5,31.4,2.2,1.5);label('S · rua',7.5,-1.7,2.2,2.8);
 label('L',16.4,14,2.2,1.5);label('O',-1.4,14,2.2,1.5);
